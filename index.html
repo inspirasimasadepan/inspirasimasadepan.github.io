@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspirasi Masa Depan - Segera Hadir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Global Reset & Body Styling --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif; /* Font utama yang bersih */
+            color: #f0f0f0; /* Teks Putih/Abu-abu Muda */
+            background-color: #0d0d0d; /* Latar Belakang Hitam Pekat */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            /* Menggunakan gambar panggung buram yang gelap */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549419137-b2e3e2307222?fit=crop&w=1400&h=800&q=80'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* --- Container Utama --- */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(17, 17, 17, 0.9); /* Sedikit Transparansi untuk efek elegan */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Bayangan lembut */
+            border: 1px solid #333;
+        }
+
+        /* --- Logo dan Judul --- */
+        .logo {
+            font-family: 'Playfair Display', serif; /* Font Serif elegan untuk Logo */
+            font-size: 1.5rem;
+            color: #ffd700; /* Aksen Emas */
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .status-message {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .highlight {
+            color: #ffd700; /* Aksen Emas */
+            font-weight: bold;
+        }
+
+        /* --- Teaser Layanan --- */
+        .service-teaser {
+            background-color: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* --- Coming Soon & Countdown --- */
+        .countdown-placeholder {
+            margin: 40px 0;
+        }
+
+        .coming-soon {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff4500; /* Warna oranye terang untuk menarik perhatian */
+            letter-spacing: 4px;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #ff4500;
+            border-radius: 5px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* --- Formulir CTA --- */
+        .cta-section h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .cta-section p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .cta-section form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .cta-section input[type="email"] {
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            width: 60%;
+            background-color: #333;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .cta-section input[type="email"]::placeholder {
+            color: #999;
+        }
+
+        .cta-section button {
+            padding: 12px 25px;
+            background-color: #ffd700; /* Tombol Emas */
+            color: #111;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-section button:hover {
+            background-color: #ffeb3b;
+            transform: translateY(-2px);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .contact-link {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: #ffd700; /* Aksen Emas saat di-hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="logo">INSPIRASI MASA DEPAN</h1>
+        
+        <div class="content">
+            <h2 class="main-title">THE STAGE IS BEING SET.</h2>
+            <p class="status-message">Kami sedang memoles detail terakhir untuk memastikan pengalaman yang <span class="highlight">spektakuler</span>.</p>
+            
+            <div class="service-teaser">
+                <p>Ahlinya **Manajemen Event**, **Talent Scouting**, dan **Produksi Kreatif** kelas premium.</p>
+            </div>
+
+            <div class="countdown-placeholder">
+                <span class="coming-soon">🔥 COMING SOON 🔥</span>
+            </div>
+
+            <div class="cta-section">
+                <h3>Jadilah yang Pertama Tahu!</h3>
+                <p>Dapatkan pembaruan eksklusif dan penawaran spesial sebelum peluncuran.</p>
+                <form action="#" method="POST">
+                    <input type="email" placeholder="Masukkan Email Anda" required>
+                    <button type="submit">Daftar Sekarang</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Inspirasi Masa Depan. All Rights Reserved.</p>
+            <div class="contact-info">
+                <a href="mailto:contact@inspirasimasadepan.id" class="contact-link">Email</a> | 
+                <a href="#" class="contact-link">Instagram</a> | 
+                <a href="#" class="contact-link">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
