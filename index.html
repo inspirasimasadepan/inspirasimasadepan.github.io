@@ -3,215 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inspirasi Masa Depan - Segera Hadir</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+    <title>PT. IMD | Inspirasi Masa Depan - A Better Way to Persuade is by Telling Story</title>
     <style>
-        /* --- Global Reset & Body Styling --- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /*
+        ------------------------------------------
+        CSS PLACEHOLDER & RESPONSIFITAS DASAR
+        ------------------------------------------
+        CATATAN: CSS di bawah ini hanya kerangka. Anda perlu menggantinya dengan file CSS eksternal (style.css)
+                 untuk desain yang lebih canggih (font, warna, animasi, dll.)
+        */
+
+        :root {
+            --primary-color: #000000; /* Hitam */
+            --secondary-color: #FFFFFF; /* Putih */
+            --accent-color: #1ABC9C; /* Warna aksen untuk CTA, bisa diganti */
+            --font-main: 'Arial', sans-serif;
         }
 
         body {
-            font-family: 'Montserrat', sans-serif; /* Font utama yang bersih */
-            color: #f0f0f0; /* Teks Putih/Abu-abu Muda */
-            background-color: #0d0d0d; /* Latar Belakang Hitam Pekat */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            /* Menggunakan gambar panggung buram yang gelap */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1549419137-b2e3e2307222?fit=crop&w=1400&h=800&q=80'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            line-height: 1.6;
         }
 
-        /* --- Container Utama --- */
         .container {
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            background-color: rgba(17, 17, 17, 0.9); /* Sedikit Transparansi untuk efek elegan */
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Bayangan lembut */
-            border: 1px solid #333;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
         }
 
-        /* --- Logo dan Judul --- */
-        .logo {
-            font-family: 'Playfair Display', serif; /* Font Serif elegan untuk Logo */
-            font-size: 1.5rem;
-            color: #ffd700; /* Aksen Emas */
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #3a3a3a;
+        /* Navigasi */
+        header {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .status-message {
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
-
-        .highlight {
-            color: #ffd700; /* Aksen Emas */
-            font-weight: bold;
-        }
-
-        /* --- Teaser Layanan --- */
-        .service-teaser {
-            background-color: #222;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            font-size: 1rem;
-        }
-
-        /* --- Coming Soon & Countdown --- */
-        .countdown-placeholder {
-            margin: 40px 0;
-        }
-
-        .coming-soon {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ff4500; /* Warna oranye terang untuk menarik perhatian */
-            letter-spacing: 4px;
-            display: inline-block;
-            padding: 10px 20px;
-            border: 2px solid #ff4500;
-            border-radius: 5px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-
-        /* --- Formulir CTA --- */
-        .cta-section h3 {
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-
-        .cta-section p {
-            margin-bottom: 20px;
-            color: #ccc;
-        }
-
-        .cta-section form {
+        nav {
             display: flex;
-            justify-content: center;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .cta-section input[type="email"] {
-            padding: 12px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            width: 60%;
-            background-color: #333;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .cta-section input[type="email"]::placeholder {
-            color: #999;
-        }
-
-        .cta-section button {
-            padding: 12px 25px;
-            background-color: #ffd700; /* Tombol Emas */
-            color: #111;
-            border: none;
-            border-radius: 5px;
+        .logo a {
+            font-size: 1.8em;
             font-weight: bold;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-section button:hover {
-            background-color: #ffeb3b;
-            transform: translateY(-2px);
-        }
-
-        /* --- Footer --- */
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-        .contact-info {
-            margin-top: 10px;
-        }
-
-        .contact-link {
-            color: #aaa;
+            color: var(--secondary-color);
             text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            margin-left: 25px;
             transition: color 0.3s;
         }
 
-        .contact-link:hover {
-            color: #ffd700; /* Aksen Emas saat di-hover */
+        /* Hero Section */
+        #hero {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            /* Placeholder: Ganti dengan gambar/video latar belakang dinamis */
+            background-image: url('placeholder-hero.jpg');
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        /* Service Grid */
+        #services .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .service-item {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        /* Portfolio Grid */
+        #portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Media Queries untuk Responsifitas */
+        @media (max-width: 768px) {
+            #hero { height: 70vh; }
+            #hero h1 { font-size: 2em; }
+            .nav-links { display: none; } /* Sembunyikan menu di mobile, perlu JS untuk Hamburger */
+            h2 { font-size: 2em; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="logo">INSPIRASI MASA DEPAN</h1>
-        
-        <div class="content">
-            <h2 class="main-title">THE STAGE IS BEING SET.</h2>
-            <p class="status-message">Kami sedang memoles detail terakhir untuk memastikan pengalaman yang <span class="highlight">spektakuler</span>.</p>
-            
-            <div class="service-teaser">
-                <p>Ahlinya **Manajemen Event**, **Talent Scouting**, dan **Produksi Kreatif** kelas premium.</p>
-            </div>
 
-            <div class="countdown-placeholder">
-                <span class="coming-soon">🔥 COMING SOON 🔥</span>
-            </div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo"><a href="#hero">IMD | PT. [cite_start]INSPIRASI MASA DEPAN [cite: 7]</a></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div class="cta-section">
-                <h3>Jadilah yang Pertama Tahu!</h3>
-                <p>Dapatkan pembaruan eksklusif dan penawaran spesial sebelum peluncuran.</p>
-                <form action="#" method="POST">
-                    <input type="email" placeholder="Masukkan Email Anda" required>
-                    <button type="submit">Daftar Sekarang</button>
-                </form>
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                [cite_start]<h1>A BETTER WAY TO PERSUADE IS BY TELLING STORY [cite: 4, 5]</h1>
+                <p>STORY IS THE REASON INFORMATION IS BEING SHARED. [cite_start]THE REASON IT IS REMEMBERED. [cite: 8, 9, 10, 11]</p>
+                <a href="#contact" class="cta-button">Let's Tell Your Story</a>
             </div>
         </div>
+    </section>
 
-        <footer class="footer">
-            <p>&copy; 2024 Inspirasi Masa Depan. All Rights Reserved.</p>
-            <div class="contact-info">
-                <a href="mailto:contact@inspirasimasadepan.id" class="contact-link">Email</a> | 
-                <a href="#" class="contact-link">Instagram</a> | 
-                <a href="#" class="contact-link">LinkedIn</a>
+    <section id="about">
+        <div class="container">
+            [cite_start]<h2>CREATIVE THINKTANK [cite: 14]</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                Kami adalah PT. [cite_start]Inspirasi Masa Depan (IMD) [cite: 7][cite_start], sebuah Creative Thinktank [cite: 14] [cite_start]yang didedikasikan untuk menyampaikan kisah strategis [cite: 15] yang melibatkan audiens.
+            </p>
+            <div style="text-align: center;">
+                [cite_start]<h3>WE DELIVER STRATEGIC STORY [cite: 15]</h3>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
+
+    <section id="services" style="background-color: #f4f4f4;">
+        <div class="container">
+            <h2>Layanan Kami</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    [cite_start]<h3>VIDEO, FILM [cite: 16]</h3>
+                    <p>Produksi film komersial dan video untuk menjangkau target audiens Anda.</p>
+                </div>
+                <div class="service-item">
+                    [cite_start]<h3>EVENT [cite: 16]</h3>
+                    <p>Perancangan dan pelaksanaan acara dan aktivasi yang meninggalkan kesan mendalam.</p>
+                </div>
+                <div class="service-item">
+                    [cite_start]<h3>DESIGN [cite: 16]</h3>
+                    <p>Solusi desain kreatif untuk identitas visual dan materi promosi Anda.</p>
+                </div>
+                <div class="service-item">
+                    [cite_start]<h3>MEDIA TO ENGAGE [cite: 16, 17]</h3>
+                    <p>Strategi media yang efektif untuk mendorong interaksi dan keterlibatan (engagement).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2>Karya Pilihan Kami</h2>
+            <div class="portfolio-grid">
+
+                <article class="portfolio-item">
+                    <img src="placeholder-manulife-film.jpg" alt="Manulife: The Free Man">
+                    <div style="padding: 15px;">
+                        [cite_start]<h3>WE MAKE STORY THROUGH COMMERCIAL FILM [cite: 18]</h3>
+                        [cite_start]<h4>MANULIFE: THE FREE MAN [cite: 19]</h4>
+                        [cite_start]<p>Campaign: MIFIP/MYFUTUREINCOMEPROTECTION /DIGITAL VIDEO/30"-90" [cite: 24, 30, 31]</p>
+                        [cite_start]<a href="https://www.youtube.com/watch?v=z55z4Y9ROVI" target="_blank">Tonton Video [cite: 33]</a>
+                    </div>
+                </article>
+
+                <article class="portfolio-item">
+                    <img src="placeholder-kemensos-psa.jpg" alt="Kemensos RI: Selamat Hari Pahlawan 2021">
+                    <div style="padding: 15px;">
+                        [cite_start]<h3>WE MAKE STORY THROUGH PUBLIC SERVICE ANNOUNCEMENT (PSA) [cite: 38]</h3>
+                        [cite_start]<h4>KEMENSOS RI: HARI PAHLAWAN NASIONAL [cite: 42]</h4>
+                        [cite_start]<p>Kementerian Sosial Republik Indonesia [cite: 39] - [cite_start]Selamat Hari Pahlawan 2021 [cite: 41]</p>
+                        [cite_start]<a href="https://www.youtube.com/watch?v=XAujAWirgJA" target="_blank">Tonton Video [cite: 44]</a>
+                    </div>
+                </article>
+
+                <article class="portfolio-item">
+                    <img src="placeholder-seismic-company-profile.jpg" alt="PT. GELOMBANG SEIMIC INDONESIA">
+                    <div style="padding: 15px;">
+                        [cite_start]<h3>WE MAKE STORY THROUGH COMPANY PROFILE [cite: 45]</h3>
+                        <h4>PT. [cite_start]GELOMBANG SEIMIC INDONESIA [cite: 49]</h4>
+                        [cite_start]<p>Meliputi Gebang Block, 3D Transition Zone, dan Seismic Data Acquisition. [cite: 46, 47, 48]</p>
+                        [cite_start]<a href="https://www.youtube.com/watch?v=XAujAWirg A" target="_blank">Tonton Video [cite: 51]</a>
+                    </div>
+                </article>
+
+                <article class="portfolio-item">
+                    <img src="placeholder-manulife-event.jpg" alt="Regain Control with Manulife">
+                    <div style="padding: 15px;">
+                        [cite_start]<h3>WE MAKE STORY THROUGH EVENTS AND ACTIVATIONS [cite: 56]</h3>
+                        [cite_start]<h4>REGAIN CONTROL WITH MANULIFE [cite: 59]</h4>
+                        [cite_start]<p>Aktivasi *booth* di Danamon Run Event untuk 'Regain Your Control' setelah maraton. [cite: 66, 67]</p>
+                        </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="background-color: var(--primary-color); color: var(--secondary-color); text-align: center;">
+        <div class="container">
+            <h2>Siapkah Anda Untuk Kisah Inspiratif Berikutnya?</h2>
+            <p style="font-size: 1.2em; margin-bottom: 40px;">Mari wujudkan ide Anda menjadi narasi yang tak terlupakan dan menghasilkan *engagement*.</p>
+            <a href="mailto:info@imd.com" class="cta-button" style="background-color: var(--accent-color); color: var(--primary-color);">Start Your Strategic Story Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 PT. [cite_start]INSPIRASI MASA DEPAN (IMD). [cite: 7] All Rights Reserved.</p>
+            <div style="margin-top: 10px;">
+                <a href="#">[FB]</a> | <a href="#">[IG]</a> | <a href="#">[LI]</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TODO: Tambahkan JavaScript untuk toggle menu hamburger di mobile
+    </script>
+
 </body>
 </html>
